@@ -55,8 +55,8 @@ router.get('/fa/getfamilleaccueil/:id',FamilleAcceuilController.getOneFamilleAcc
 /**         Produit            */
 /*******************************/
 router.post('/product/addProduct',ProductController.upload,ProductController.addProduct)
-router.get ('/allProducts',ProductController.getAllProducts)
-router.get('/getproduct/:id',ProductController.getOneProduct)
+router.get ('/product/allProducts',ProductController.getAllProducts)
+router.get('/product/getproduct/:id',ProductController.getOneProduct)
 
 
 /***********************************/
