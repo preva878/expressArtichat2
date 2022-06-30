@@ -17,7 +17,7 @@ const VeterinaireController = require('../Controllers/VeterinaireController')
 
 router.post('/animalin/addAnimalIn',AnimalInController.upload,AnimalInController.AddAnimalIn)
 router.get('/animalin/getAllAnimalIns', AnimalInController.getAllAnimalIns)
-router.get('/getAnimalIn/:id',AnimalInController.getOneAnimalIn)
+router.get('/animalin/getAnimalIn/:id',AnimalInController.getOneAnimalIn)
 
 /***************************/
 /*          AnimalOut      */
