@@ -42,6 +42,12 @@ const getOneProduct = async (req,res) => {
     res.status(200).send(productid)
 }
 
+//4. update product
+const updateProduct = async (req,res) => {
+    let id = req.params.id
+    const productup = await Product.update(req.body,{where:{id:id}})
+    res.status(200).send(productup)
+}
 // upload image
 
 const storage = multer.diskStorage({
@@ -72,5 +78,6 @@ module.exports = {
     addProduct,
     getAllProducts,
     getOneProduct,
-    upload
+    upload,
+    updateProduct
 }

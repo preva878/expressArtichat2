@@ -36,6 +36,13 @@ const getAllSponsor = async (req,res) => {
      let sponsorid = await Sponsor.findOne({where:{id:id}})
      res.status(200).send(sponsorid)
 }
+//4.update sponsor
+const updateSponsor = async (req,res) => {
+    let id = req.params.id
+    const sponsorup = await Sponsor.update(req.body,{where:{id:id}})
+    res.status(200).send(sponsorup)
+}
+
 //6. upload les images ds leur dossier
 const storage = multer.diskStorage({
     destination:( req,file,cb) => {
@@ -66,4 +73,5 @@ module.exports = {
     getAllSponsor,
      getOneSponsor,
      upload,
+     updateSponsor,
 }

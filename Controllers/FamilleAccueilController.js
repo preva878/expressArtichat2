@@ -40,6 +40,14 @@ const getOneFamilleAccueil = async (req,res) => {
     let fa = await FamilleAccueil.findOne({where:{id:id}})
     res.status(200).send(fa)
 }
+
+//4. update fa
+const updateFa = async (req,res) => {
+    let id = req.params.id
+    const familleUp = await FamilleAccueil.update(req.body,{where:{id:id}})
+    res.status(200).send(familleUp)
+}
+
 //6. upload les images ds leur dossier
 const storage = multer.diskStorage({
     destination:( req,file,cb) => {
@@ -71,4 +79,5 @@ module.exports = {
     getAllFamilleAccueil,
     getOneFamilleAccueil,
     upload,
+    updateFa
 }

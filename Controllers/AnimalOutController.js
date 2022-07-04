@@ -49,6 +49,13 @@ const getOneAnimalOut = async (req,res) => {
     res.status(200).send(animalOut)
 }
 
+//4. update animalout
+const updateAnimalOut = async (req,res) => {
+    let id = req.params.id
+    const animalOut = await AnimalOut.update(req.body,{where:{id:id}})
+    res.status(200).send(animalOut)
+}
+
 //upload image
 
 const storage = multer.diskStorage({
@@ -82,4 +89,5 @@ module.exports = {
     getAllAnimalOut,
     upload,
     getOneAnimalOut,
+    updateAnimalOut
 }

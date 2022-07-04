@@ -43,6 +43,13 @@ const getOneEquipement = async(req,res) => {
     res.status(200).send(equipement)
 }
 
+//4. update equipement
+const updateEquipement = async (req,res) => {
+    let id = req.params.id
+    const equipementup = await Equipement.update(req.body,{where:{id:id}})
+    res.status(200).send(equipementup)
+}
+
 //upload image ds dossier
 
 const storage = multer.diskStorage({
@@ -71,5 +78,5 @@ const upload = multer({
 }).single('Image')
 
 module.exports = {
-    addEquipement,getAllEquipements,getOneEquipement,upload
+    addEquipement,getAllEquipements,getOneEquipement,upload,updateEquipement
 }

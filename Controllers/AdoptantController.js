@@ -51,6 +51,13 @@ const getOneAdoptant = async (req,res) => {
     res.status(200).send(adoptantid)
 }
 
+//4. update par id 
+const updateAdoptant = async (req,res) => {
+    let id = req.params.id
+    const adoptantup = await Adoptant.update(req.body,{where:{id:id}})
+    res.status(200).send(adoptantup)
+}
+
 
 
 //.pour le multer
@@ -84,4 +91,5 @@ module.exports={
     getAllAdoptants,
     getOneAdoptant,
     upload,
+    updateAdoptant,
 }

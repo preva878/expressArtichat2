@@ -38,6 +38,14 @@ const getOneVeterinaire = async (req,res) => {
     let veterinairid = await Veterinaire.findOne({where:{id:id}})
     res.status(200).send(veterinairid)
 }
+
+//4.update veterinaire
+const updateVeterinaire = async (req,res) => {
+    let id = req.params.id
+    const veterinaireup = await Veterinaire.update(req.body,{where:{id:id}})
+    res.status(200).send(veterinaireup)
+}
+
 //6. upload les images ds leur dossier
 const storage = multer.diskStorage({
     destination:( req,file,cb) => {
@@ -69,4 +77,5 @@ module.exports = {
     getAllVeterinaires,
     getOneVeterinaire,
     upload,
+    updateVeterinaire,
 }
