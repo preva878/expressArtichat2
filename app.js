@@ -14,7 +14,14 @@ app.use( (req, res, next) => {
  }) 
  
  // utilisation du cors pour autoriser toute les origine de connexionx au serveur
- app.use(cors())
+ app.use(cors({
+    orgin:["http://localhost:3000"],
+    method:["GET","POST"],
+    credentials:true
+ }))
+
+
+
  // les routes
  const router = require('./Routes/allroutes')
  app.use('/api',router)

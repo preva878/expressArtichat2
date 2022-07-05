@@ -16,6 +16,8 @@ const addVeterinaire = async (req,res) => {
         Prix:req.body.Prix,
         TypeIntervention:req.body.TypeIntervention,
         Artichats:req.body.Artichats,
+        ContactTel:req.body.ContactTel,
+        ContactMail:req.body.ContactMail,
         Notes:req.body.Notes
     }
     console.log(info)

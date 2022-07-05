@@ -34,7 +34,7 @@ const db = {}
 db.Sequelize = Sequelize
 db.sequelize = sequelize
 
-//db.sequelize.sync({ force: true }).then(() => {console.log(`resync done apres force true`)})
+//db.sequelize.sync({ alter: true }).then(() => {console.log(`resync done apres force true`)})
 
 db.Adoptant = require ('./adoptantModel')(sequelize,DataTypes)
 db.AnimalIn = require ('./animalInModel')(sequelize,DataTypes)
@@ -45,7 +45,8 @@ db.Products = require('./productModel.js')(sequelize, DataTypes)
 db.Sponsor = require ('./sponsorModel')(sequelize,DataTypes)
 db.Veterinaire = require ('./veterinaireModel')(sequelize,DataTypes)
 
-
+db.USER = require ('./users')(sequelize,DataTypes)
+db.ROLES = require ('./roles')(sequelize,DataTypes)
 /******************/
 /****Relations*****/
 /******************/
@@ -74,7 +75,9 @@ db.Equipement.belongsToMany(db.Sponsor,{through:'EquipSponsor'});
 //db.AnimalOut.belongsTo(db.Adoptant);
 db.Adoptant.hasMany(db.AnimalOut);
 
-//relation one to one
+//role et user
+db.ROLES.belongsToMany(db.USER, { through: "user_roles" });
+db.USER.belongsToMany(db.ROLES, { through: "user_roles" });
 
 
 

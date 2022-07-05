@@ -15,6 +15,7 @@ const addSponsor = async (req,res) => {
         adresse:req.body.adresse,
         cp:req.body.cp,
         ville:req.body.ville,
+        contactTel:req.body.contactTel,
     }
     console.log(info)
     const sponsor = await Sponsor.create(info)

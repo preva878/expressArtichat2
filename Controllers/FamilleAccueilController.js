@@ -16,6 +16,8 @@ const addFamilleAccueil = async (req,res) => {
         Ville:req.body.Ville,
         EquipementsFournit:req.body.EquipementsFournit,
         Artichats:req.body.Artichats,
+        Contacttel:req.body.Contacttel,
+        ContactMail:req.body.ContactMail,
         Notes:req.body.Notes
 
     }

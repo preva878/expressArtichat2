@@ -35,6 +35,15 @@ const Sponsor = (Sequelize,DataTypes) => {
             type:DataTypes.STRING,
             allowNull:false
         },
+        contactMail:{
+            type:DataTypes.STRING,
+            allowNull:true
+        },
+        contactTel:{
+            type:DataTypes.INTEGER,
+            allowNull:true
+        },
+       
     })
     return Sponsor
 }

@@ -40,6 +40,14 @@ const VeterinaireModel = (Sequelize,DataTypes) => {
             type:DataTypes.STRING,
             allowNull: false
         },
+        ContactTel:{
+            type:DataTypes.INTEGER,
+            allowNull:false,
+        },
+        ContactMail:{
+            type:DataTypes.STRING,
+            allowNull:true
+        }
     })
     return Veterinaire
 }

@@ -30,6 +30,14 @@ const FamilleAccueilModel = (Sequelize,DataTypes) => {
             type:DataTypes.STRING,
             allowNull:true
         },
+        Contacttel:{
+            type:DataTypes.INTEGER,
+            allowNull:true
+        },
+        ContactMail:{
+            type:DataTypes.STRING,
+            allowNull:true
+        }
        
     })
     return FamilleAccueil
